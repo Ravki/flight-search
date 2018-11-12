@@ -1,0 +1,60 @@
+<div class="fs-search-results">
+    <div class="fs-result-widget-from" v-if="showFromResults">
+        <template v-for="item in results.from">
+            <div class="result-widget-container">
+                <div class="result-widget airline">
+                        <img src="../../../assets/images/indigo.gif">
+                    <img v-html="getAirlineLogo(item.details.airline.name)">
+                    <div class="airline-name">{{item.details.airline.name}}</div>
+                    <div class="airline-number">{{item.details.airline.number}}</div>
+                </div>
+                <div class="result-widget departure">
+                    <div class="time">{{item.details.travel.departureTime}}</div>
+                    <div class="city">{{item.details.travel.departureCity}}</div>
+                </div>
+                <div class="result-widget duration">
+                        <div class="duration-arrow"></div>
+                        <div class="duration-time">{{item.details.travel.duration}}</div>
+                </div>
+                <div class="result-widget arrival">
+                    <div class="time">{{item.details.travel.arrivalTime}}</div>
+                    <div class="city">{{item.details.travel.arrivalCity}}</div>
+                </div>
+                <div class="result-widget price"><span class="rupee-icon"></span>{{item.fare}}</div>
+                <div class="result-widget select">
+                        <input type="radio" name="selectFrom">
+                    </div>
+            </div>
+        </template>
+    </div>
+    <div class="fs-result-widget-empty" v-else>
+        Sorry, we are currently not serving these routes at this moment.
+    </div>
+    <div class="fs-result-widget-to" v-if="showToResults">
+        <template v-for="item in results.to">
+                    <div class="result-widget-container">
+                        <div class="result-widget airline">
+                            <img src="../../../assets/images/indigo.gif">
+                            <div class="airline-name">{{item.details.airline.name}}</div>
+                            <div class="airline-number">{{item.details.airline.number}}</div>
+                        </div>
+                        <div class="result-widget departure">
+                            <div class="departure-time">{{item.details.travel.departureTime}}</div>
+                            <div class="departure-city">{{item.details.travel.departureCity}}</div>
+                        </div>
+                        <div class="result-widget duration">
+                                <div class="duration-arrow"></div>
+                                <div class="duration-time">{{item.details.travel.duration}}</div>
+                        </div>
+                        <div class="result-widget arrival">
+                            <div class="arrival-time">{{item.details.travel.arrivalTime}}</div>
+                            <div class="arrival-city">{{item.details.travel.arrivalCity}}</div>
+                        </div>
+                        <div class="result-widget price">{{item.fare}}</div>
+                        <div class="result-widget select">
+                                <input type="radio" name="selectTo">
+                            </div>
+                    </div>
+        </template>
+    </div>
+</div>

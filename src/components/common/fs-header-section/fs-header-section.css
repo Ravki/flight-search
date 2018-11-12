@@ -1,0 +1,23 @@
+.fs-header-section {
+    height: 60px;
+    box-shadow: 1px 0 8px -2px;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    letter-spacing: 2px;
+    padding-left: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.fs-header-section h1 {
+    color: #ef6614;
+    font-weight: 700;
+    cursor: pointer;
+    width: 20%;
+}
+
+.fs-header-section a {
+    text-decoration: none;
+}

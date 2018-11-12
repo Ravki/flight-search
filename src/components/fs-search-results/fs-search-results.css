@@ -1,0 +1,99 @@
+.fs-search-results {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+}
+
+.fs-result-widget-from,
+.fs-result-widget-to,
+.fs-result-widget-empty {
+    border: 1px solid #dddddd;
+    flex-grow: 1;
+}
+
+.fs-result-widget-empty {
+    text-align: center;
+    font-size: 24px;
+    height: 200px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.result-widget-container {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+}
+
+.rupee-icon {
+    height: 19px;
+    background-image: url(../../../assets/images/split-img.png);
+    background-position: -34px -817px;
+    background-repeat: no-repeat;
+    width: 15px;
+}
+
+.result-widget {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.result-widget.airline {
+    font-size: 11px;
+}
+
+.result-widget.select {
+    justify-content: center;
+}
+
+.result-widget.duration {
+    align-items: flex-start;
+}
+
+.result-widget.duration .duration-time {
+    margin-left: 15px;
+}
+
+.result-widget .time {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.result-widget .city {
+    font-size: 11px;
+    color: #999;
+    line-height: 12px;
+}
+
+.result-widget.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #d63b05;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.duration-arrow {
+    background-image: url(../../../assets/images/split-img.png);
+    background-position: 0 -1064px;
+    background-repeat: no-repeat;
+    height: 17px;
+    width: 120%;
+}
+
+@media(max-width: 768px) {
+    .fs-search-results {
+        flex-direction: column;
+    }
+    .result-widget.duration {
+        display: none;
+    }
+}

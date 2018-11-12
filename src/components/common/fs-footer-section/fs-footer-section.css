@@ -1,0 +1,9 @@
+.fs-footer-section {
+    background-color: #333;
+    color: #ffffff;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    height: 120px;
+    justify-content: center;
+}

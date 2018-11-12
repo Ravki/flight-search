@@ -1,0 +1,20 @@
+<div class="fs-mini-search-box">
+    <div class="row">
+        <div class="mini-search-tabs">
+            <div v-on:click="tabClick(true)" v-bind:class="{ active: isOneWay }" class="tabs">One-way</div>
+            <div v-on:click="tabClick(false)" v-bind:class="{ active: !isOneWay }" class="tabs">Round Trip</div>
+        </div>
+        <div class="mini-search-fields">
+            <autocomplete :initialDisplay="selectedOrigin" @selected="fromDestination" @clear="fromDestination" placeholder="From where?" :source="airports">
+            </autocomplete>
+            <autocomplete :initialDisplay="selectedDestination" @selected="toDestination" @clear="toDestination" placeholder="To where?" :source="airports">
+            </autocomplete>
+            <date-picker v-if="isOneWay" type="date" :editable="isDateEditable" v-model="selectedDate" :not-before="getTodaysDate()" :lang="lang" format="DD/MM/YYYY" placeholder="Depart" confirm>
+            </date-picker>
+            <date-picker v-else type="daterange" :editable="isDateEditable" :shortcuts="isDateShortcuts" v-model="selectedDate" :not-before="getTodaysDate()" lang="en" format="DD/MM/YYYY" placeholder="Depart - Return" confirm :range="isDateRange" range-separator="-">
+            </date-picker>
+            <input type="number" placeholder="No of Passengers" v-model="selectedPasengerCount">
+            <button class="search" v-on:click="search">Search</button>
+        </div>
+    </div>
+</div>
